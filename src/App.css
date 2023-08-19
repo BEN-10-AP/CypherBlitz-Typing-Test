@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+  align-items: center;
+}
+
+
+
+.header{
+  background-color: #fb9761;
+}
+.main{
+  /* display: flex; */
+  /* justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5px; */
+  padding: 10px;
+  
+}
+.movies{
+  background-color: rgb(51, 50, 50);
+  border: 1px solid;
+  color: white;
+  padding: 3px;
+  font-weight: bold;
+  width: 24%;
+}
+.movie img{
+  height: 200px;
+  max-width: 100%;
+}
+.table{
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  margin-top: 20px;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.textBox{
+  min-height: 300px;
+  border: 10px solid black;
+  background-color: #1976D2;
+  padding: 10px;
+  margin: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -10px, rgba(0, 0, 0, 0.3) 0px 30px 60px -20px;
+}
+.textData{
+        color: white;
+        font-size: large;
+}
