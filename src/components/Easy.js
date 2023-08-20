@@ -17,6 +17,7 @@ function magic(value){
     if(data[arl-1]==value[arl-1])
       console.log("true");
  
+      
 }
 
   return (
