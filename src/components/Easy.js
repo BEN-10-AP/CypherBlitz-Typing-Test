@@ -18,6 +18,7 @@ function magic(value){
       console.log("true");
  
 }
+
   return (
     <>
     
