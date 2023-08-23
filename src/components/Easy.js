@@ -1,13 +1,17 @@
 import React from 'react'
 import { useState } from 'react';
 import Box from '@mui/material/Box';
-import { CenterFocusStrong, Flare } from '@mui/icons-material';
+import { CenterFocusStrong, Flare, InputOutlined } from '@mui/icons-material';
 import TextField from '@mui/material/TextField';
+import Correct from './Correct';
+import Incorrect from './Incorrect';
 
 const Easy = () => {
   const data='In ands as a testament to the potential of simplicity in transforming our lives. Its benefits, spanning from stress reduction to improved focus and emotional regulation, are far-reaching. As the world becomes increasingly fast-paced, carving out moments to engage in mindful breathing can be a powerful act of self-care, leading to a more balanced and mindful existence. Repository is created';
 const [curIndex, setcurIndex]=useState(0);
 const [wordIndex, setwordIndex] = useState(0);
+const[bar, setBar]=useState(0);
+
 function magic(value){
   setcurIndex(curIndex+1);
   if(value.endsWith(' '))
@@ -15,7 +19,12 @@ function magic(value){
   const arl=value.length;
   if(arl>0)
     if(data[arl-1]==value[arl-1])
-      console.log("true");
+      {
+        setBar(1);
+      }  
+    else{
+      setBar(2);
+    }
  
       
 }
@@ -61,6 +70,9 @@ function magic(value){
           variant="standard"
         />
     </Box>
+    {bar==1?<Correct/>:null}
+      {bar==2?<Incorrect/>:null}
+
     </>
   );
     }

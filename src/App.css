@@ -65,3 +65,30 @@
   margin: 20px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 40px -10px, rgba(0, 0, 0, 0.3) 0px 15px 30px -10px;
 }
+
+.bar-correct{
+  max-width: 100%;
+  height: 10px;
+  background-color: green;
+  animation-name: example-correct;
+  animation-duration: 2s;
+}
+@keyframes example-correct {
+  0%   {background-color: green;}
+  25%  {background-color: rgb(12, 186, 26);}
+  50%  {background-color: rgb(120, 247, 120)}
+  100% {background-color: white;}
+}
+.bar-incorrect{
+  max-width: 100%;
+  height: 10px;
+  background-color: red;
+  animation-name: example-incorrect;
+  animation-duration: 2s;
+}
+@keyframes example-incorrect {
+  0%   {background-color: red;}
+  25%  {background-color: rgb(254, 56, 56);}
+  50%  {background-color: rgb(246, 89, 89)}
+  100% {background-color: white;}
+}
