@@ -42,17 +42,7 @@ const[x,setX]=useState(1);
   // {
   //   setNum(num-1);
   // }
-  useEffect(()=>{
-async function getData(){
-  const data1 = await fetch(`https://hub.dummyapis.com/employee?noofRecords=${x}&idStarts=1001`) ;
-  setData(data1);
 
-
-const res=await data1.json();
-setData(res);
-}
-getData();
-  },[x]);
   const [tabvalue, setValue] = React.useState(0);
   const handleChange = (event , newValue) => {
     setValue(newValue);

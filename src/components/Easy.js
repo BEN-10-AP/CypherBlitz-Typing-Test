@@ -12,6 +12,11 @@ const [curIndex, setcurIndex]=useState(0);
 const [wordIndex, setwordIndex] = useState(0);
 const[bar, setBar]=useState(0);
 
+function check(value)
+{
+  
+}
+
 function magic(value){
   setcurIndex(curIndex+1);
   if(value.endsWith(' '))
