@@ -17,8 +17,6 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
-
-
 function App() {
   const [name, setName]=useState("");
   const [email, setEmail]=useState("");
