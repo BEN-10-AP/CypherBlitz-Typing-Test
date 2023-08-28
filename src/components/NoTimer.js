@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Check from './Check';
+
 
     
     function CircularProgressWithLabel(props) {
@@ -19,6 +19,7 @@ import Check from './Check';
                 right: 0,
                 position: 'absolute',
                 display: 'flex',
+                flex: 'wrap',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
@@ -42,23 +43,17 @@ import Check from './Check';
     
 
 
-      const Timer = () => {
+      const NoTimer = () => {
       const [progress, setProgress] = React.useState(100);
-      
-
 
       React.useEffect(() => {
-        const timer = setInterval(() => {
-          setProgress((prevProgress) => (prevProgress <= 0 ? 0 : prevProgress - 1));
-        }, 600);
+        const timer = 60;
         return () => {
           clearInterval(timer);
         };
       }, []);
-      
     
-      return <CircularProgressWithLabel value={progress}
-      />
+      return <CircularProgressWithLabel value={progress} />
 }
 
-export default Timer
+export default NoTimer
