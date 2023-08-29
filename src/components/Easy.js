@@ -7,6 +7,8 @@ import Correct from './Correct';
 import Incorrect from './Incorrect';
 import Timer from './Timer';
 import NoTimer from './NoTimer';
+import Result from './Result';
+
 
 const Easy = () => {
   const data='In ands as a testament to the potential of simplicity in transforming our lives. Its benefits, spanning from stress reduction to improved focus and emotional regulation, are far-reaching. As the world becomes increasingly fast-paced, carving out moments to engage in mindful breathing can be a powerful act of self-care, leading to a more balanced and mindful existence. Repository is created';
@@ -115,7 +117,11 @@ function magic(value){
           variant="standard"
         />
     </Box>
-    <div>Your net word per minute is {StrIndex} and gross word per minute is {wordIndex}</div>
+
+    {TimeElapsed==0?<Result nwpm={StrIndex} gwpm={wordIndex}/>:null}
+    
+    
+
     
     </>
   
