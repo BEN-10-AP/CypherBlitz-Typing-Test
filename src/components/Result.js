@@ -1,11 +1,19 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useRef } from 'react'
+import { useState,useEffect } from 'react'
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { createTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
+
 
 const theme = createTheme({
     palette: {
@@ -26,14 +34,33 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
+  
+  
+  
+
 const Result = (props) => {
+  
+  const divRef=useRef(null);
+  const [open, setOpen] = React.useState(false);
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
     const [result, setresult] = useState(false);
-
+    
 
     setInterval(()=>{
         setresult(true);
     },1000);
+function leader(e){
+  console.log(e);
+}
+
+    
   return (
     <>
     {result==false?
@@ -75,17 +102,47 @@ const Result = (props) => {
 
 
   </Box>
-  <div className='result'><button className="button-87" role="button">
+  <div className='result'><button className="button-87" role="button" onClick={handleClickOpen}>
           Get on the leaderboard
       </button></div>
-      </>
-  }
+      
 
  
 
 
+
+
+    <div>
+      
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Details Required</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Enter your Game_Name"
+            type="email"
+            fullWidth
+            variant="standard"
+            onChange={(e)=>{
+              leader(e.target.value);
+            }}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Submit</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+</>}
 </>
-  )
+  );
 }
+
 
 export default Result
