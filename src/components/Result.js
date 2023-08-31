@@ -41,14 +41,24 @@ const Item = styled(Paper)(({ theme }) => ({
 const Result = (props) => {
   
   const divRef=useRef(null);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [submit , setsubmit]= useState(false);
+  const [name, setName] = useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
+
+
   };
 
   const handleClose = () => {
     setOpen(false);
+    
+    if(name.length>0)
+    setsubmit(true);
+    
+    if(name.length==0)
+    alert("Game_Name cannot be empty");
   };
     const [result, setresult] = useState(false);
     
@@ -57,6 +67,7 @@ const Result = (props) => {
         setresult(true);
     },1000);
 function leader(e){
+setName(e);
   console.log(e);
 }
 
@@ -134,11 +145,12 @@ function leader(e){
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
+          
           <Button onClick={handleClose}>Submit</Button>
         </DialogActions>
       </Dialog>
     </div>
+    
 </>}
 </>
   );
