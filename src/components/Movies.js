@@ -1,11 +1,7 @@
-
+import React from "react"
 const Movies = (props) => {
   return (
-    <div className="movies">
-   
-    <p>{props.data}</p>
-    
-    </div>
+   <div></div> 
   )
 }
 

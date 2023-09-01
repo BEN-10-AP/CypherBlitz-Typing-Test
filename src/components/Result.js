@@ -12,7 +12,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-
+import { addDoc } from 'firebase/firestore';
+import { leaderRef } from './firebase/firebase';
+import swal from 'sweetalert';
+import ShowResult from './firebase/ShowResult';
 
 
 const theme = createTheme({
@@ -55,10 +58,12 @@ const Result = (props) => {
     setOpen(false);
     
     if(name.length>0)
-    setsubmit(true);
+    {setsubmit(true);
+      addLeader();}
     
     if(name.length==0)
     alert("Game_Name cannot be empty");
+
   };
     const [result, setresult] = useState(false);
     
@@ -70,8 +75,28 @@ function leader(e){
 setName(e);
   console.log(e);
 }
-
+const addLeader = async () =>{
+  try{await addDoc(leaderRef,{
+    "Name": name,
+    "Net WPM": props.gwpm,
+    "Gross WPM": props.nwpm
+  });
     
+swal({
+  title: "You are pushed to the leaderboard",
+  icon: "success",
+  button: false,
+  timer: 3000
+})}
+catch(err){
+  swal({
+    title: err,
+    icon: "error",
+    button: false,
+    timer: 3000
+  })
+}
+}
   return (
     <>
     {result==false?
@@ -150,7 +175,7 @@ setName(e);
         </DialogActions>
       </Dialog>
     </div>
-    
+    <ShowResult/>
 </>}
 </>
   );
