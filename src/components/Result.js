@@ -63,7 +63,7 @@ const Result = (props) => {
     
     if(name.length==0)
     alert("Game_Name cannot be empty");
-
+    
   };
     const [result, setresult] = useState(false);
     
@@ -175,7 +175,7 @@ catch(err){
         </DialogActions>
       </Dialog>
     </div>
-    <ShowResult/>
+    
 </>}
 </>
   );

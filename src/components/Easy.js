@@ -8,20 +8,24 @@ import Incorrect from './Incorrect';
 import Timer from './Timer';
 import NoTimer from './NoTimer';
 import Result from './Result';
+import ShowResult from './firebase/ShowResult';
 
-
-const Easy = () => {
+const Easy = (props) => {
   const data='In ands as a testament to the potential of simplicity in transforming our lives. Its benefits, spanning from stress reduction to improved focus and emotional regulation, are far-reaching. As the world becomes increasingly fast-paced, carving out moments to engage in mindful breathing can be a powerful act of self-care, leading to a more balanced and mindful existence. Repository is created';
 const [curIndex, setcurIndex]=useState(0);
 const [wordIndex, setwordIndex] = useState(0);
 const[bar, setBar]=useState(0);
 const[Counting, setCounting] = useState(false);
 const [checkOnce, setcheckOnce] = useState(false);
+const [leaderOn, setleaderOn] = useState(false);
 
 
 const[TimeElapsed, setTimeElapsed]=useState(60);
 const [StrIndex, setStrIndex] = useState(0);
 
+function leaderBoardOn(){
+  setleaderOn(true);
+}
 
 const Time1=(value)=>{
 
@@ -122,9 +126,10 @@ function magic(value){
     
     
 
-    
+   
     </>
   
     
     )}
+    
 export default Easy

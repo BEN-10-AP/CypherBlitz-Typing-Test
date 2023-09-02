@@ -16,6 +16,7 @@ import Hard from './components/Hard';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import ShowResult from './components/firebase/ShowResult';
 
 function App() {
   const [name, setName]=useState("");
@@ -70,6 +71,8 @@ const[x,setX]=useState(1);
       
       
     </div>
+    <ShowResult/>
+
     </>
   )
 }
