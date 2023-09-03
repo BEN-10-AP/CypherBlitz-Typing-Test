@@ -1,39 +1,38 @@
 import React, { useState,useEffect } from 'react'
 import { getDoc, getDocs } from 'firebase/firestore'
 import { leaderRef } from './firebase'
+import Display from './Display'
 
 
 const ShowResult = () => {
 const[data, setData] = useState([]);
 const [one,setOne] = useState(true);
-useEffect(()=>{
+const [length, setLength] = useState(0);
 
-},[])
-    useEffect(() => {
+    useEffect(()=> {
+        
         async function getData(){
             const _data = await getDocs(leaderRef);
             _data.forEach((doc)=>{
                 setData((prv)=> [...prv,doc.data()])
+                
             })
             
         }
         getData();
+        setLength(data.length)
+       
         
-    },[])
-    
+        },[])
+        function removeDuplicates(arr) {
+            return arr.filter((item,
+                index) => arr.indexOf(item) === index);
+        }
   return (
-  
-   data.map((e,i)=>{
-      return(
-      <div>
-      <h2>{e.Name}</h2>
-      <h2>{e["Net WPM"]}</h2>
-      <h2>{e["Gross WPM"]}</h2>
-      </div>
-      )
-    })
-    
-    )
-}
-
+    <div>
+{one?<Display data={data.slice(0,4)} length={length}/>:null}
+<h1>Ek bar</h1>
+</div>
+  )
+    }
 export default ShowResult

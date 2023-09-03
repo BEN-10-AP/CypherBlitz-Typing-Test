@@ -15,7 +15,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { addDoc } from 'firebase/firestore';
 import { leaderRef } from './firebase/firebase';
 import swal from 'sweetalert';
-import ShowResult from './firebase/ShowResult';
+
 
 
 const theme = createTheme({

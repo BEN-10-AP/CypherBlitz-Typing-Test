@@ -46,7 +46,12 @@ const[x,setX]=useState(1);
   const handleChange = (event , newValue) => {
     setValue(newValue);
   };
-  
+  useEffect(()=>{
+    setInterval(()=>{
+      setX(0);
+    },2000)
+    
+  },[])
   return (
   
     
@@ -60,19 +65,19 @@ const[x,setX]=useState(1);
         <Tab label="Hard" />
       </Tabs>
     </Box>
-      {tabvalue==0?<Easy/>:null}
+      {tabvalue==0?<><Easy/></>
+:null}
       {tabvalue==1?<Medium/>:null}
       {tabvalue==2?<Hard/>:null}
       
-        
+        {x==0?<ShowResult/>:null}
         
 
       
       
       
     </div>
-    <ShowResult/>
-
+    
     </>
   )
 }

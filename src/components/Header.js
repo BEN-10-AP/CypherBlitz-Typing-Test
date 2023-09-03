@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Home, Leaderboard } from '@mui/icons-material';
 import Easy from './Easy';
-import ShowResult from './firebase/ShowResult';
+
 
 
 interface Props {

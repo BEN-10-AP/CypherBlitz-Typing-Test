@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getFirestore, collection} from 'firebase/firestore';
+import {getFirestore, collection, query, orderBy} from 'firebase/firestore';
 import { getAnalytics } from "firebase/analytics";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,7 +21,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-export const leaderRef = collection(db, "leaderboard");
+const leaderRef1 = collection(db, "leaderboard");
+export const leaderRef = query(leaderRef1, orderBy('Net WPM', 'desc'));
+
 const analytics = getAnalytics(app);
 
 export default app;
