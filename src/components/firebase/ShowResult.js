@@ -31,7 +31,7 @@ const [length, setLength] = useState(0);
   return (
     <div>
 {one?<Display data={data.slice(0,4)} length={length}/>:null}
-<h1>Ek bar</h1>
+
 </div>
   )
     }

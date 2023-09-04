@@ -21,7 +21,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-const leaderRef1 = collection(db, "leaderboard");
+export const leaderRef1 = collection(db, "leaderboard");
 export const leaderRef = query(leaderRef1, orderBy('Net WPM', 'desc'));
 
 const analytics = getAnalytics(app);

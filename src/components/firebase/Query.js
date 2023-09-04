@@ -1,5 +1,6 @@
 import { collection, query, where, orderBy } from "firebase/firestore";
-import { db, leaderRef } from "./firebase";
+import { leaderRef } from "./firebase";
+import {db} from "./firebase"
 const citiesRef = collection(db, "cities");
 
 // Create a query against the collection.

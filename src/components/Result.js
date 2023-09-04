@@ -13,7 +13,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { addDoc } from 'firebase/firestore';
-import { leaderRef } from './firebase/firebase';
+import { leaderRef1 } from './firebase/firebase';
 import swal from 'sweetalert';
 
 
@@ -76,10 +76,12 @@ setName(e);
   console.log(e);
 }
 const addLeader = async () =>{
-  try{await addDoc(leaderRef,{
+  try{await addDoc(leaderRef1,{
+    
     "Name": name,
-    "Net WPM": props.gwpm,
-    "Gross WPM": props.nwpm
+    "Gross WPM": props.nwpm,
+    "Net WPM": props.gwpm
+    
   });
     
 swal({

@@ -319,8 +319,8 @@ ul li:nth-child(7){
 
 /* CSS */
 .button-87 {
-  margin: 10px;
-  padding: 15px 30px;
+  margin: 5px;
+  padding: 15px 15px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -347,4 +347,132 @@ ul li:nth-child(7){
 
 .button-87:active {
   transform: scale(0.95);
+}
+
+.board-top{
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  color: orange;
+  background-color: #1976D2;
+  padding: 15px;
+}
+@import url(https://fonts.googleapis.com/css?family=Akronim);
+
+body {
+    background: #ca8;
+}
+
+.fire {
+	margin: 15px auto;
+	
+	max-width: 100%;
+	height: 150px;
+
+	background-position: center center;
+	background-size: 500px 200px;
+	border-radius: 10px;
+	font-family: 'Akronim';
+	overflow: hidden;
+    text-align: center;
+	vertical-align: middle;
+
+}
+.fire:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.Blazing {
+	display: inline-block;
+	margin: 0;
+
+    color: rgb(255, 115, 0);
+    font-size: 65px;
+	line-height: 20px;
+	min-width: 50px;
+	outline: none;
+	vertical-align: middle;
+    
+	text-shadow:
+        0 3px 20px red,
+        0 0 20px red,
+		0 0 10px orange,
+		4px -5px 6px yellow,
+		-4px -10px 10px yellow,
+		0 -10px 30px yellow;
+	animation: 2s Blazing infinite alternate linear;
+}
+@media screen and (max-width: 480px) {
+  .fire {
+    margin: 10px auto;
+    
+    max-width: 100%;
+    height: 100px;
+  
+    background-position: center center;
+    background-size: 500px 200px;
+    border-radius: 10px;
+    font-family: 'Akronim';
+    overflow: hidden;
+      text-align: center;
+    vertical-align: middle;
+  
+  }
+  .Blazing {
+    display: inline-block;
+    margin: 0;
+  
+      color: rgb(255, 115, 0);
+      font-size: 40px;
+    line-height: 20px;
+    min-width: 50px;
+    outline: none;
+    vertical-align: middle;
+      
+    text-shadow:
+          0 3px 20px red,
+          0 0 20px red,
+      0 0 10px orange,
+      4px -5px 6px yellow,
+      -4px -10px 10px yellow,
+      0 -10px 30px yellow;
+    animation: 2s Blazing infinite alternate linear;
+  }
+}
+
+
+@keyframes Blazing {
+	0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+		0 0 10px orange,
+		0 0 0 yellow,
+		0 0 5px yellow,
+		-2px -5px 5px yellow,
+		4px -10px 10px yellow; }
+	25%   { text-shadow: 0 3px 20px red, 0 0 30px red,
+		0 0 20px orange,
+		0 0 5px yellow,
+		-2px -5px 5px yellow,
+		3px -10px 10px yellow,
+		-4px -15px 20px yellow; }
+	50%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+		0 -5px 10px orange,
+		-2px -5px 5px yellow,
+		3px -10px 10px yellow,
+		-4px -15px 20px yellow,
+		2px -20px 30px rgba(255,255,0,0.5); }
+	75%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+		0 -5px 10px orange,
+		3px -5px 5px yellow,
+		-4px -10px 10px yellow,
+		2px -20px 30px rgba(255,255,0,0.5),
+		0px -25px 40px rgba(255,255,0,0)}
+	100%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+		0 0 10px orange,
+		0 0 0 yellow,
+		0 0 5px yellow,
+		-2px -5px 5px yellow,
+		4px -10px 10px yellow; }
 }
