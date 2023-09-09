@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Box from '@mui/material/Box';
 import { CenterFocusStrong, Flare, InputOutlined } from '@mui/icons-material';
 import TextField from '@mui/material/TextField';
@@ -13,58 +13,62 @@ import Result from './Result';
 const Easy = () => {
   const data='In ands as a testament to the potential of simplicity in transforming our lives. Its benefits, spanning from stress reduction to improved focus and emotional regulation, are far-reaching. As the world becomes increasingly fast-paced, carving out moments to engage in mindful breathing can be a powerful act of self-care, leading to a more balanced and mindful existence. Repository is created';
 const [curIndex, setcurIndex]=useState(0);
-const [wordIndex, setwordIndex] = useState(0);
+const wordIndex = useRef(0);
 const[bar, setBar]=useState(0);
 const[Counting, setCounting] = useState(false);
 const [checkOnce, setcheckOnce] = useState(false);
 const [leaderOn, setleaderOn] = useState(false);
-
+const prevIndex = useRef("");
+const [inputValue,setInputValue] = useState("");
+const diff = "Easy"
 
 const[TimeElapsed, setTimeElapsed]=useState(60);
-const [StrIndex, setStrIndex] = useState(0);
+const StrIndex = useRef(0);
 
 function leaderBoardOn(){
   setleaderOn(true);
 }
 
-const Time1=(value)=>{
+useEffect(()=>{
+prevIndex.current = inputValue;
+},[inputValue])
 
-  
+const Time1=()=>{
+
   setInterval(()=>{
-  setTimeElapsed(0);
-  },60000);
+    setTimeElapsed(0);
+  },60000)
+  console.log(prevIndex.current);
   
-  if(TimeElapsed==0&&checkOnce==false)
-  {
     setcheckOnce(true);
     let str="";
     let str1="";
-    let count=0;
-    let count1=0;
-    value.trim();
-    for(let i=0;i<value.length;i++)
+   let count =0;
+   let count1=0;
+    prevIndex.current.trim();
+    for(let i=0;i<prevIndex.current.length;i++)
     {
-      if(value[i]!=' ')
-            {   str+=value[i];
+      if(prevIndex.current[i]!=' ')
+            {   str+=prevIndex.current[i];
                 str1+=data[i];
                 
             }
         else
         {
-          console.log(str);
-          console.log(str1);
+          
             if(str1===str)
-              count=count+1;    
+            count = count +1;
             count1=count1+1;
             //setStrIndex(StrIndex+1);
 
             str="";
             str1="";
         }
+
     }
-    setStrIndex(count);
-    setwordIndex(count1);
-  }
+    StrIndex.current=count;    
+    wordIndex.current=count1;
+    
   }
 
 function magic(value){
@@ -112,7 +116,7 @@ function magic(value){
     
       <TextField
           id="fullWidth"
-          onChange={(e)=>{magic(e.target.value); Time1(e.target.value)}}
+          onChange={(e)=>{magic(e.target.value); setInputValue(e.target.value); Time1() }}
           
           fullWidth label="Start Typing!" 
           multiline
@@ -121,8 +125,8 @@ function magic(value){
           variant="standard"
         />
     </Box>
-
-    {TimeElapsed==0?<Result nwpm={StrIndex} gwpm={wordIndex}/>:null}
+    
+    {TimeElapsed==0?<Result nwpm={StrIndex.current} gwpm={wordIndex.current} diff={diff}/>:null}
     
     
 

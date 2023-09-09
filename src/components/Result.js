@@ -42,7 +42,7 @@ const Item = styled(Paper)(({ theme }) => ({
   
 
 const Result = (props) => {
-  
+  console.log(props.nwpm)
   const divRef=useRef(null);
   const [open, setOpen] = useState(false);
   const [submit , setsubmit]= useState(false);
@@ -79,9 +79,9 @@ const addLeader = async () =>{
   try{await addDoc(leaderRef1,{
     
     "Name": name,
-    "Gross WPM": props.nwpm,
-    "Net WPM": props.gwpm
-    
+    "Gross WPM": props.gwpm,
+    "Net WPM": props.nwpm,
+    "diff": props.diff,
   });
     
 swal({

@@ -55,9 +55,9 @@ const Display = (props) => {
               <TableCell align="right">
                 {row['Name']}
               </TableCell>
-              <TableCell align="right">{row['Net WPM']}</TableCell>
               <TableCell align="right">{row['Gross WPM']}</TableCell>
-              <TableCell align="right">{'Easy'}</TableCell>
+              <TableCell align="right">{row['Net WPM']}</TableCell>
+              <TableCell align="right">{row['diff']}</TableCell>
               
             </TableRow>
           ))}
