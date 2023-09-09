@@ -15,6 +15,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Home, Leaderboard } from '@mui/icons-material';
 import Easy from './Easy';
+import { useState, useRef, useEffect } from 'react';
+import { TabScrollButton, useScrollTrigger } from '@mui/material';
 
 
 
@@ -33,9 +35,13 @@ export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
+  const divRef = useRef(null);
+  const [messageRef, setMessageRef] = useState(false);
+  
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -45,6 +51,7 @@ export default function DrawerAppBar(props: Props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
+            
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>

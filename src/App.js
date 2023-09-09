@@ -1,6 +1,7 @@
 
 import { FunctionsSharp } from '@mui/icons-material';
 import './App.css';
+import { useRef } from 'react';
 import Header from './components/Header';
 import Movies from './components/Movies';
 // import movies from './movies.json'
@@ -17,6 +18,7 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import ShowResult from './components/firebase/ShowResult';
+import Footer1 from './Footer1';
 
 function App() {
   const [name, setName]=useState("");
@@ -25,8 +27,12 @@ function App() {
 const[x,setX]=useState(1);
   
 
+
+
   function addData(){
     
+    
+
     setData([...data, {
       name: name,email: email
 
@@ -73,7 +79,7 @@ const[x,setX]=useState(1);
         {x==0?<ShowResult/>:null}
         
 
-      
+      {<Footer1/>}
       
       
     </div>

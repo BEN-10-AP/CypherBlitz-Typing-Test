@@ -11,7 +11,7 @@ import Result from './Result';
 
 
 const Medium = () => {
-  const data='Tara Rumpum Tara Rumpum, Tara Rumpum Tara Rumpum reduction to improved focus and emotional regulation, are far-reaching. As the world becomes increasingly fast-paced, carving out moments to engage in mindful breathing can be a powerful act of self-care, leading to a more balanced and mindful existence. Repository is created';
+  const data='The better behaviour resulting from smart devices is just one threat to the insurance industry. Conventional risk pools (for home or car insurance, for example) are shrinking as preventable accidents decline, leaving the slow-footed giants of the industry at risk. Business is instead moving to digital-native insurers, many of which are offering low premiums to those willing to collect and share their data. Yet the biggest winners could be tech companies rather than the firms that now dominate the industry. Insurance is increasingly reliant on the use of technology to change behaviour; firms act as helicopter parents to policyholders, warning of impending harm—slow down; reduce your sugar intake; call the plumber—the better to reduce unnecessary payouts.';
 const [curIndex, setcurIndex]=useState(0);
 const wordIndex = useRef(0);
 const[bar, setBar]=useState(0);

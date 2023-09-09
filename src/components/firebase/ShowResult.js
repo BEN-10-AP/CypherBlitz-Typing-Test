@@ -30,7 +30,7 @@ const [length, setLength] = useState(0);
         }
   return (
     <div>
-{one?<Display data={data.slice(0,4)} length={length}/>:null}
+{one?<Display data={data.slice(0,10)} length={length}/>:null}
 
 </div>
   )
