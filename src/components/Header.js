@@ -19,7 +19,6 @@ import { useState, useRef, useEffect } from 'react';
 import { TabScrollButton, useScrollTrigger } from '@mui/material';
 
 
-
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -29,13 +28,17 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Leaderboard'];
+const navItems = [];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const divRef = useRef(null);
+
+  
+  
+  const divRef1 = useRef(null);
+  const divRef2 = useRef(null);
   const [messageRef, setMessageRef] = useState(false);
   
   const handleDrawerToggle = () => {
@@ -47,18 +50,11 @@ export default function DrawerAppBar(props: Props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <h5>CypherBlitz</h5>
       <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-            
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      
     </Box>
   );
+
+  
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
@@ -84,15 +80,7 @@ export default function DrawerAppBar(props: Props) {
             CypherBlitz: Typing Revolutionised
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {<>
-              <Button sx={{ color: '#fff' }}>
-                Home
-              </Button>
-              <Button sx={{ color: '#fff' }}>
-                Leaderboard
-              </Button> 
-              </>            
-            }
+            
           </Box>
         </Toolbar>
       </AppBar>
@@ -118,5 +106,6 @@ export default function DrawerAppBar(props: Props) {
         
       </Box>
     </Box>
+    
   );
 }
